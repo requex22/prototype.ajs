@@ -1,20 +1,21 @@
 export class Character {
     constructor(name, type) {
-        this.name = name;
-        this.health = 100;
-        this.level = 1;
-    
+        let favoritesTypes = ['Bowman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie'];
+
         if (name.length < 2 || name.length > 10) {
             throw new Error('Не корректное имя');
+        } else {
+            this.name = name;
         }
-
-        let favoritesTypes = ['Bowman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie']
 
         if (!favoritesTypes.includes(type)) {
             throw new Error('Не корректный тип');
         } else {
             this.type = type;
         }
+
+        this.health = 100;
+        this.level = 1;
     }
 
     levelUp() {
